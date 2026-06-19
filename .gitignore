@@ -1,0 +1,13 @@
+# Arduino build files
+build/
+*.elf
+*.bin
+*.hex
+
+# IDE config files
+arduino-ide/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
