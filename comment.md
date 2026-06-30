@@ -1,4 +1,5 @@
-# Oh, you finally made it here, security system and virtual machine. That's great. You're really amazing, darin.
+### 2026 June 29
+## Oh, you finally made it here, security system and virtual machine. That's great. You're really amazing, darin.
 
 Your progress looks solid, and I think you're taking the right approach by preparing your environment before diving into cybersecurity. I have a few suggestions that might help:
 
@@ -11,3 +12,11 @@ Your progress looks solid, and I think you're taking the right approach by prepa
 Most importantly, don't rush to install every tool available. Understanding the fundamentals is far more valuable than having hundreds of tools on your system. A clean, well-organized environment and strong Linux knowledge will benefit you much more in the long run.
 
 Keep up the great work, and good luck with your cybersecurity journey!
+
+### 2026 July 1 
+## LudoBot
+
+This looks really promising! But babe, if even I am a new user I'm totally new to this, and I have no idea how it works 😵‍💫. Is it some kind of board game? 
+
+Can you "teach" me how to play? Maybe you could add a "Demo" section (GIF or short video) showing how the bot works in a real Tele chat. It would help new users understand the gameplay much faster? 😘
+
