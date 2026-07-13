@@ -1,4 +1,4 @@
-# Oh, you finally made it here, security system and virtual machine. That's great. You're really amazing, darin.
+# Oh, you finally made it here, security system and virtual machine. That's great. You're really amazing, darling.
 
 Your progress looks solid, and I think you're taking the right approach by preparing your environment before diving into cybersecurity. I have a few suggestions that might help:
 
