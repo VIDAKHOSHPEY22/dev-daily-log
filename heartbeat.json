@@ -1,7 +1,9 @@
 {
-    "heartbeat": 1,
+    "heartbeat": 0,
     "status": "alive",
     "timezone": "Asia/Tehran",
     "last_update": "",
-    "quote": ""
+    "quote": "",
+    "day_of_week": "",
+    "milestone": ""
 }
