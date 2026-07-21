@@ -18,6 +18,8 @@ A tiny GitHub Actions automation project.
 
 
 
+[<img src="https://raw.githubusercontent.com/yumiaura/myCat/refs/heads/main/docs/cat.gif" width="164" alt="cat.gif"/>](https://github.com/yumiaura)
+
 ---
 
 ## Why does this repository exist?
