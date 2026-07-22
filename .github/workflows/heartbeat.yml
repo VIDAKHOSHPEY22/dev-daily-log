@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
   schedule:
-    # 09:00 Tehran (UTC+3:30)
-    - cron: "30 5 * * *"
+    # 10:00 Tehran (UTC+3:30) = 06:30 UTC
+    - cron: "30 6 * * *"
 
 permissions:
   contents: write
@@ -36,14 +36,12 @@ jobs:
           tz = ZoneInfo("Asia/Tehran")
           now = datetime.now(tz)
 
-          # اگر فایل heartbeat.json وجود نداشت، ایجاد کن
           try:
               with open("heartbeat.json","r",encoding="utf8") as f:
                   hb = json.load(f)
           except FileNotFoundError:
               hb = {"heartbeat": 0}
 
-          # اگر فایل quotes.json وجود نداشت، از لیست پیش‌فرض استفاده کن
           try:
               with open("quotes.json","r",encoding="utf8") as f:
                   quotes = json.load(f)
@@ -127,9 +125,13 @@ jobs:
               f.write(readme)
           EOF
 
+      - name: Keep Repository Active
+        run: |
+          echo "🔄 Last activity: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" > .last-activity
+          git add .last-activity
+
       - name: Commit and Push
         run: |
-          # تنظیم با اسم و ایمیل خودتان
           git config user.name "VIDAKHOSHPEY22"
           git config user.email "vidatwin18@gmail.com"
 
@@ -151,12 +153,10 @@ jobs:
             "📈 Tiny Progress"
             "✨ Stay Consistency"
             "🫀 Still Alive"
+            "🔄 Keep Alive"
           )
 
-          # انتخاب پیام تصادفی
           MESSAGE=${messages[$RANDOM % ${#messages[@]}]}
 
           git commit -m "$MESSAGE"
-
-          # PUSH با مشخص کردن branch
           git push origin HEAD:main
