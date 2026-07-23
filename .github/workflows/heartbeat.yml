@@ -2,10 +2,9 @@ name: ❤️ Daily Heartbeat
 
 on:
   workflow_dispatch:
-
   schedule:
-    # 10:00 Tehran (UTC+3:30) = 06:30 UTC
-    - cron: "30 6 * * *"
+    # هر ۶ ساعت یکبار اجرا شود (مثل ریپازیتوری دوم)
+    - cron: "0 */6 * * *"
 
 permissions:
   contents: write
@@ -15,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -125,38 +124,18 @@ jobs:
               f.write(readme)
           EOF
 
-      - name: Keep Repository Active
+      - name: Commit & Push (with your identity)
         run: |
-          echo "🔄 Last activity: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" > .last-activity
-          git add .last-activity
-
-      - name: Commit and Push
-        run: |
+          # تنظیم با اسم و ایمیل خودتان (مثل ریپازیتوری دوم)
           git config user.name "VIDAKHOSHPEY22"
           git config user.email "vidatwin18@gmail.com"
 
           git add .
 
           if git diff --cached --quiet; then
-            echo "✅ No changes to commit"
+            echo "No changes"
             exit 0
           fi
 
-          messages=(
-            "❤️ Daily Heartbeat"
-            "🌱 Another Day"
-            "☀️ Good Morning"
-            "🚀 Keep Building"
-            "🤖 Heartbeat Updated"
-            "💚 Automation Check"
-            "🌍 Earth Rotated Again"
-            "📈 Tiny Progress"
-            "✨ Stay Consistency"
-            "🫀 Still Alive"
-            "🔄 Keep Alive"
-          )
-
-          MESSAGE=${messages[$RANDOM % ${#messages[@]}]}
-
-          git commit -m "$MESSAGE"
-          git push origin HEAD:main
+          git commit -m "❤️ Daily Heartbeat"
+          git push
